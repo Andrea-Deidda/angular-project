@@ -1,0 +1,9 @@
+.pointer{
+    cursor: pointer;
+}
+
+#footer {
+  margin-top: 5%;
+  left:0;
+  width:100%;
+}
