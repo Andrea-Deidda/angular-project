@@ -6,14 +6,16 @@
 }
 
 h2{
-  margin-top: 5%;
-  text-align: center;
-}
-
-form{
+  margin-top: 20%;
   text-align: center;
 }
 
 input{
-  margin-right: 10px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+div{
+  text-align: center;
 }

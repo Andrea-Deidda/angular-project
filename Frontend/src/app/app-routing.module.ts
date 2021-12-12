@@ -7,17 +7,21 @@ import { EditComponent } from './routes/edit/edit.component';
 import { LoginComponent } from './routes/login/login.component';
 import { LoginErrorComponent } from './routes/login-error/login-error.component';
 import { SignInComponent } from './routes/sign-in/sign-in.component';
+import { WelcomeComponent } from './routes/welcome/welcome.component';
+import { GenreComponent } from './routes/genre/genre.component';
 
 
 const routes: Routes = [
-  { path: "", redirectTo : '/dashboard', pathMatch: 'full' },
+  { path: "", redirectTo : '/welcome', pathMatch: 'full' },
   { path: "dashboard", component : DashboardComponent },
   { path: "add", component : AddComponent },
   { path: "details/:id", component : DetailsComponent },
   { path: "edit/:id", component: EditComponent },
   { path: "login", component: LoginComponent},
   { path: "login-error", component: LoginErrorComponent},
-  { path: "sign-in", component: SignInComponent}
+  { path: "sign-in", component: SignInComponent},
+  { path: "welcome", component: WelcomeComponent},
+  { path: "genre", component: GenreComponent}
 ];
 
 @NgModule({

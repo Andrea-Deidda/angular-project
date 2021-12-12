@@ -13,9 +13,13 @@ module.exports = (app) => {
   app.get(`${dataPath}/:id`, DataEngine.getEntryById);
   app.put(`${dataPath}/:id`, DataEngine.editEntry);
   app.delete(`${dataPath}/:id`, DataEngine.deleteEntry);
+  
+  app.get(`${dataPath}/:genre`, DataEngine.getEntryByGenre);
 
   app.post(userPath, UserDataEngine.createUser);
   app.get(userPath, UserDataEngine.getUser);
+
+ 
 
   /********** ERROR HANDLER **********/
   app.use(ErrorsEngine.page404);

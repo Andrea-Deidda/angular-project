@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './../../services/data.service';
 import { Router } from '@angular/router';
-import { MovieData } from '../../models/data.model';
+import { MovieData } from 'src/app/models/data.model';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-genre',
+  templateUrl: './genre.component.html',
+  styleUrls: ['./genre.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class GenreComponent implements OnInit {
 
   constructor( private dataService: DataService, private router : Router) { }
 
@@ -18,13 +18,11 @@ export class DashboardComponent implements OnInit {
 
   public movies: MovieData [];
   moviesDataLoader=false;
-  loadingPage=true;
 
   getEntries(){
     this.dataService.getData().subscribe( (response : any) => {
       this.movies = response;
       this.moviesDataLoader=true;
-      this.loadingPage=false;
 
     })
   }
@@ -32,7 +30,5 @@ export class DashboardComponent implements OnInit {
   goToDetails(id){
     this.router.navigateByUrl('/details/' + id);
   }
-
-  
 
 }

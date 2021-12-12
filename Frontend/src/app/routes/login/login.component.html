@@ -1,12 +1,13 @@
 <app-header></app-header>
+<h2>LOGIN</h2>
+<div>
+  <label for="staticEmail"></label>
+  <input type="text" placeholder="user" required [(ngModel)]="usernameInput" id="staticEmail"> <br>
+  <label for="inputPassword"></label>
+  <input type="password" placeholder="password" required [(ngModel)]="passwordInput"id="inputPassword"> <br>
+  <button type="submit" (click)="submitButton()">SUBMIT</button>
 
-<h2>LOGIN</h2> <br>
-<form (ngSubmit)="onSubmit(myform)" #myform = "ngForm">
-  <label for="name"></label>
-  <input type="text" name="name" id="name" placeholder="user id" ngModel> <br>
-  <label for="password"></label>
-  <input type="password" name="password" id="password" placeholder="password" ngModel><br><br>
-  <button type="submit">Accedi</button>
-</form>
+</div>
+
 
 <app-footer id="footer"></app-footer>

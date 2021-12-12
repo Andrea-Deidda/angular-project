@@ -1,6 +1,5 @@
 <app-header></app-header>
 
-
 <div class="container p-5" *ngIf="moviesDataLoader">
   <h1 class="text-center mb-5">
     The Net Fish
@@ -8,14 +7,6 @@
 
   <div class="text-right">
 
-    <button type="button"  style="font-size: 30px" class="btn btn-default" aria-label="Left Align" [routerLink]='["/add"]'>
-      <span class="fas fa-plus" aria-hidden="true"></span>
-      </button>
-
-  </div>
-
-  <div *ngIf="loadingPage">
-    <app-loading></app-loading>
   </div>
 
   <table class="table">
@@ -38,10 +29,4 @@
   </table>
 </div>
 
-
-
-<div id="footer">
-  <app-footer></app-footer>
-</div>
-
-
+<app-footer id="footer" ></app-footer>

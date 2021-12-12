@@ -15,6 +15,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { LoginComponent } from './routes/login/login.component';
 import { LoginErrorComponent } from './routes/login-error/login-error.component';
 import { SignInComponent } from './routes/sign-in/sign-in.component';
+import { WelcomeComponent } from './routes/welcome/welcome.component';
+import { GenreComponent } from './routes/genre/genre.component';
+import { LoadingComponent } from './component/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { SignInComponent } from './routes/sign-in/sign-in.component';
     HeaderComponent,
     LoginComponent,
     LoginErrorComponent,
-    SignInComponent
+    SignInComponent,
+    WelcomeComponent,
+    GenreComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

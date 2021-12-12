@@ -50,4 +50,9 @@ export class DataService {
     });
   };
 
+  getEntryByGenre( genre ) {
+    return this.http.get<MovieData>(this.baseURL + "/" + genre)
+  }
+
+
 }

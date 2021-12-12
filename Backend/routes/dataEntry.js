@@ -128,10 +128,35 @@ const deleteEntry = (req, res) => {
     })
 };
 
+const getEntryByGenre = (req, res) => {
+  const entryGenre = req.params.genre;
+
+  DataEntry.findAll({
+    where: {
+      genre: entryGenre
+    }
+  })
+    .then(entry => {
+      if (!entry) {
+        return res.status(404).send({
+          error: true,
+          message: 'The requested data does not exist.',
+          entryGenre
+        })
+      }
+
+      return res.status(200).send(entry);
+    })
+    .catch(err => {
+      return res.status(500).send(err);
+    })
+};
+
 module.exports = {
   getEntry,
   getEntryById,
   editEntry,
   deleteEntry,
-  createEntry
+  createEntry,
+  getEntryByGenre
 };
