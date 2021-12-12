@@ -133,7 +133,7 @@ const getEntryByGenre = (req, res) => {
 
   DataEntry.findAll({
     where: {
-      genre: entryGenre
+      genre : entryGenre
     }
   })
     .then(entry => {

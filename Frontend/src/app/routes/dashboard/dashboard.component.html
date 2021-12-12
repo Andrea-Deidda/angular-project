@@ -1,5 +1,8 @@
 <app-header></app-header>
 
+<div *ngIf="loadingPage">
+  <app-loading></app-loading>
+</div>
 
 <div class="container p-5" *ngIf="moviesDataLoader">
   <h1 class="text-center mb-5">
@@ -12,10 +15,6 @@
       <span class="fas fa-plus" aria-hidden="true"></span>
       </button>
 
-  </div>
-
-  <div *ngIf="loadingPage">
-    <app-loading></app-loading>
   </div>
 
   <table class="table">
