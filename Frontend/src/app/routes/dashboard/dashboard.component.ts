@@ -11,6 +11,8 @@ import { MovieData } from '../../models/data.model';
 export class DashboardComponent implements OnInit {
 
   constructor( private dataService: DataService, private router : Router) { }
+  
+  genreInput : string;
 
   ngOnInit(): void {
     this.getEntries()
@@ -19,6 +21,12 @@ export class DashboardComponent implements OnInit {
   public movies: MovieData [];
   moviesDataLoader=false;
   loadingPage=true;
+
+  genre: string = ""
+  submitButton(){
+    this.genre= this.genreInput;
+    return this.genre;
+  }
 
   getEntries(){
     this.dataService.getData().subscribe( (response : any) => {

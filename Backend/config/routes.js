@@ -14,7 +14,7 @@ module.exports = (app) => {
   app.put(`${dataPath}/:id`, DataEngine.editEntry);
   app.delete(`${dataPath}/:id`, DataEngine.deleteEntry);
   
-  app.get(`/genre/:genre`, DataEngine.getEntryByGenre);
+  app.get(`${dataPath}/genre/:genre`, DataEngine.getEntryByGenre);
 
   app.post(userPath, UserDataEngine.createUser);
   app.get(userPath, UserDataEngine.getUser);

@@ -8,6 +8,7 @@ import { MovieData } from '../models/data.model';
 export class DataService {
 
   baseURL = 'http://localhost:3000/data';
+  baseURL2 = 'http://localhost:3000/data/genre';
 
   constructor( private http : HttpClient) { }
 
@@ -50,8 +51,9 @@ export class DataService {
     });
   };
 
-  getEntryByGenre( genre ) {
-    return this.http.get<MovieData>(this.baseURL + "/" + genre)
+ 
+  getEntryByGenre(genre) {
+    return this.http.get<MovieData>(this.baseURL2 + "/" + genre)
   }
 
 

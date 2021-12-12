@@ -12,10 +12,13 @@ export interface UserInterface {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
   })
+
   export class LoginComponent implements OnInit {
-  constructor(private router: Router) { }
+    constructor(private router: Router) { }
+
   usernameInput: string;
   passwordInput: string;
+  
   admin : UserInterface = {
     username: "admin",
     password: "admin"
@@ -25,8 +28,10 @@ export interface UserInterface {
     password: "pippo2"
     }
     users : UserInterface[]= [this.admin, this.pippo];
+
     ngOnInit() {
     }
+
     submitButton(){
     if(this.usernameInput!=null && this.passwordInput!=null){
     if(this.searchInsideArray(this.usernameInput, this.passwordInput)){

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MovieData } from 'src/app/models/data.model';
 import { DataService } from 'src/app/services/data.service';
+import { logging } from 'protractor';
+import {DashboardComponent} from 'src/app/routes/dashboard/dashboard.component'
 
 @Component({
   selector: 'app-genre',
@@ -12,20 +14,27 @@ export class GenreComponent implements OnInit {
 
   constructor( private dataService: DataService, private router : Router) { }
 
+  genreInput : string;
+
+  dashBoardComponent : DashboardComponent;
 
   ngOnInit(): void {
     this.getEntries()
   }
 
+ 
   public movies: MovieData [];
   moviesDataLoader=false;
-
+  
+  genre: string = "Adventure"
+  
   getEntries(){
-    this.dataService.getData().subscribe( (response : any) => {
+    /*this.genre = this.dashBoardComponent.genreInput;*/
+    this.dataService.getEntryByGenre(this.genre).subscribe( (response : any) => {
       this.movies = response;
       this.moviesDataLoader=true;
-
     })
+    console.log(this.genre);
   }
 
   goToDetails(id){
