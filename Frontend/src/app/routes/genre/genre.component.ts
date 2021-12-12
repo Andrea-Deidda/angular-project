@@ -19,7 +19,8 @@ export class GenreComponent implements OnInit {
   dashBoardComponent : DashboardComponent;
 
   ngOnInit(): void {
-    this.getEntries()
+    this.getEntries();
+    this.genreInput = this.dashBoardComponent.submitButton();
   }
 
  
@@ -30,11 +31,11 @@ export class GenreComponent implements OnInit {
   
   getEntries(){
     /*this.genre = this.dashBoardComponent.genreInput;*/
-    this.dataService.getEntryByGenre(this.genre).subscribe( (response : any) => {
+    this.dataService.getEntryByGenre(this.genreInput).subscribe( (response : any) => {
       this.movies = response;
       this.moviesDataLoader=true;
     })
-    console.log(this.genre);
+    console.log(this.genreInput);
   }
 
   goToDetails(id){
