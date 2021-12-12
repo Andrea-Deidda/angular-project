@@ -11,8 +11,7 @@
   <div>
     <label for="genre"></label>
     <input type="text" placeholder="search movie by genre" required [(ngModel)]="genreInput" id="staticEmail"> <br>
-    <button type="submit" (click)="submitButton()" >SEARCH</button>
-    <button type="submit"[routerLink]='["/genre"]'>VAI</button>
+    <button type="submit" (click)="goToGenre()" >SEARCH</button>
   </div>
   <div class="text-right">
 
@@ -23,6 +22,7 @@
   </div>
 
   <table class="table">
+
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>

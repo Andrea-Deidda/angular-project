@@ -22,10 +22,10 @@ export class DashboardComponent implements OnInit {
   moviesDataLoader=false;
   loadingPage=true;
 
-  genre: string = ""
-  submitButton(){
+  genre: string 
+  goToGenre(){
     this.genre= this.genreInput;
-    return this.genre;
+    this.router.navigateByUrl('/genre/' + this.genre);
   }
 
   getEntries(){
@@ -40,7 +40,5 @@ export class DashboardComponent implements OnInit {
   goToDetails(id){
     this.router.navigateByUrl('/details/' + id);
   }
-
-  
 
 }

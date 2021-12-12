@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieData } from 'src/app/models/data.model';
 import { DataService } from 'src/app/services/data.service';
 import { logging } from 'protractor';
@@ -11,32 +11,36 @@ import {DashboardComponent} from 'src/app/routes/dashboard/dashboard.component'
   styleUrls: ['./genre.component.css']
 })
 export class GenreComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private dataService: DataService, 
+    private router : Router) { }
 
-  constructor( private dataService: DataService, private router : Router) { }
-
-  genreInput : string;
-
-  dashBoardComponent : DashboardComponent;
+  dataEntry: MovieData;
+  genre: string;
+  ratedOption : string;
 
   ngOnInit(): void {
-    this.getEntries();
-    this.genreInput = this.dashBoardComponent.submitButton();
+    this.genre = this.route.snapshot.params['genre'];
+    this.fetchEntry()
+    
   }
 
- 
   public movies: MovieData [];
   moviesDataLoader=false;
-  
-  genre: string = "Adventure"
-  
-  getEntries(){
-    /*this.genre = this.dashBoardComponent.genreInput;*/
-    this.dataService.getEntryByGenre(this.genreInput).subscribe( (response : any) => {
+
+  fetchEntry(){
+    this.dataService.getEntryByGenre(this.genre).subscribe( (res: any ) => {
+      this.movies = res;
+      this.moviesDataLoader=true;
+    })
+  }
+
+
+  /*getEntries(){
+    this.dataService.getData().subscribe( (response : any) => {
       this.movies = response;
       this.moviesDataLoader=true;
     })
-    console.log(this.genreInput);
-  }
+  }*/
 
   goToDetails(id){
     this.router.navigateByUrl('/details/' + id);

@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: "login-error", component: LoginErrorComponent},
   { path: "sign-in", component: SignInComponent},
   { path: "welcome", component: WelcomeComponent},
-  { path: "genre", component: GenreComponent}
+  { path: "genre/:genre", component: GenreComponent}
 ];
 
 @NgModule({
