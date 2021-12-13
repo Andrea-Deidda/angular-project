@@ -1,8 +1,6 @@
 <app-header></app-header>
 
-<div *ngIf="loadingPage">
-  <app-loading></app-loading>
-</div>
+
 
 <div class="container p-5" *ngIf="moviesDataLoader">
   <h1 class="text-center mb-5">
@@ -11,7 +9,9 @@
   <div>
     <label for="genre"></label>
     <input type="text" placeholder="search movie by genre" required [(ngModel)]="genreInput" id="staticEmail"> <br>
-    <button type="submit" (click)="goToGenre()" >SEARCH</button>
+    <button type="submit" (click)="goToGenre()" >SEARCH <i class="fas fa-search"></i>
+
+    </button>
   </div>
   <div class="text-right">
 
@@ -41,6 +41,11 @@
     </tbody>
   </table>
 </div>
+
+<div *ngIf="!moviesDataLoader">
+  <app-loading></app-loading>
+</div>
+
 
 
 

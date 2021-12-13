@@ -20,7 +20,6 @@ export class DashboardComponent implements OnInit {
 
   public movies: MovieData [];
   moviesDataLoader=false;
-  loadingPage=true;
 
   genre: string 
   goToGenre(){
@@ -32,7 +31,6 @@ export class DashboardComponent implements OnInit {
     this.dataService.getData().subscribe( (response : any) => {
       this.movies = response;
       this.moviesDataLoader=true;
-      this.loadingPage=false;
 
     })
   }
