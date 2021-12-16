@@ -1,10 +1,8 @@
 export interface MovieApiInterface{
     average_rating: number,
     backdrop_path : string,
-    description: string, 
-    id: number,
     name: string,
-    results: ResultInterface []
+    results: ResultInterface
 
 }
 

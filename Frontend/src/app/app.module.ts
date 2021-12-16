@@ -18,6 +18,7 @@ import { SignInComponent } from './routes/sign-in/sign-in.component';
 import { WelcomeComponent } from './routes/welcome/welcome.component';
 import { GenreComponent } from './routes/genre/genre.component';
 import { LoadingComponent } from './component/loading/loading.component';
+import { TheMovieApiComponent } from './routes/the-movie-api/the-movie-api.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoadingComponent } from './component/loading/loading.component';
     SignInComponent,
     WelcomeComponent,
     GenreComponent,
-    LoadingComponent
+    LoadingComponent,
+    TheMovieApiComponent
   ],
   imports: [
     BrowserModule,

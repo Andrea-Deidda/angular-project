@@ -9,6 +9,7 @@ import { LoginErrorComponent } from './routes/login-error/login-error.component'
 import { SignInComponent } from './routes/sign-in/sign-in.component';
 import { WelcomeComponent } from './routes/welcome/welcome.component';
 import { GenreComponent } from './routes/genre/genre.component';
+import { TheMovieApiComponent } from './routes/the-movie-api/the-movie-api.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: "login-error", component: LoginErrorComponent},
   { path: "sign-in", component: SignInComponent},
   { path: "welcome", component: WelcomeComponent},
-  { path: "genre/:genre", component: GenreComponent}
+  { path: "genre/:genre", component: GenreComponent},
+  { path: "theMovieApi", component: TheMovieApiComponent }
 ];
 
 @NgModule({

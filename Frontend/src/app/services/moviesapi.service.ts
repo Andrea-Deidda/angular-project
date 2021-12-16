@@ -7,13 +7,13 @@ import { MovieApiInterface } from '../models/apiMovie.model';
 })
 export class MoviesApiService {
 
-    private baseURL = 'https://api.themoviedb.org/4/';
-    private apiKey = "MYKEY";
+    private baseURL = 'https://api.themoviedb.org/4';
+    private apiKey = "api_key=d1885b2821efbfa9ce3256a15cd5a7de";
 
     constructor( private http : HttpClient) { }
 
     getMarvelList(){
-        return this.http.get<MovieApiInterface>(this.baseURL+"list/1?api_key="+this.apiKey);
+        return this.http.get<MovieApiInterface>(this.baseURL+"/list/1?"+this.apiKey);
     }
 
 }
